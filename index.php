@@ -28,8 +28,13 @@
     </div>
   </header>
   <div class="front-div">
-    <img src="img/main.avif" width="800px">
-    <img src="img/main.avif" width="400px">
+    <div>
+      <img src="img/main.avif" width="700px">
+    </div>
+    <div>
+      <h1> Explore</h1>
+      <p> BLABALBALA</p>
+    </div>
   </div>
   <div class="front-div">
     <img src="img/main.avif" width="800px">

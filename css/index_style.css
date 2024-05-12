@@ -13,12 +13,13 @@ header {
 }
 footer{
   background-color: #f1f1f1;
-  height: 600px;
+  height: 200px;
 }
 a {
   text-decoration: none;
   color: black;
-  padding: 20px;
+  padding: 20px 10px 20px 10px;
+  float: right;
 }
 a:hover {
   background-color: aqua;
@@ -29,4 +30,6 @@ a:hover {
 }
 
 .front-div {
+  display: flex;
+  justify-content: space-between;
 }
