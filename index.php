@@ -1,25 +1,41 @@
 <!doctype html>
-<html class="no-js" lang="">
-
+<html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title></title>
-  <link rel="stylesheet" href="css/style.css">
+  <title>Hotels by RavenClaw</title>
+  <link rel="stylesheet" href="css/index_style.css">
 
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" href="/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="icon" href="icon.svg" type="image/svg+xml">
   <link rel="apple-touch-icon" href="icon.png">
-git
-  <meta name="theme-color" content="#fafafa">
 </head>
 
 <body>
-
-  <!-- Add your site or application content here -->
-  <p>Hello world! This is HTML5 Boilerplate.</p>
   <script src="js/app.js"></script>
+  <header>
+    <div class="header-nav">
+      <div>
+        <img src="icon.png">
+      </div>
+      <div>
+        <a href="index.php">Find Stay</a>
+        <a href="login.php">Sign in</a>
+      </div>
+    </div>
+    <div>
 
+    </div>
+  </header>
+  <div class="front-div">
+    <img src="img/main.avif" width="800px">
+    <img src="img/main.avif" width="400px">
+  </div>
+  <div class="front-div">
+    <img src="img/main.avif" width="800px">
+  </div>
+  <footer>
+  </footer>
 </body>
 
 </html>
