@@ -13,32 +13,48 @@
 
 <body>
   <script src="js/app.js"></script>
+
   <header>
     <div class="header-nav">
       <div>
-        <img src="icon.png">
+        <img src="/img/raven.png" alt="logo">
       </div>
       <div>
-        <a href="index.php">Find Stay</a>
-        <a href="login.php">Sign in</a>
+        <a href="login.php">Sign In</a>
+        <a href="reservation.php">Find Stay</a>
       </div>
     </div>
-    <div>
-
+    <div class="header-nav" style="justify-content: flex-start">
+      <a style="padding: ">Services</a>
+      <a>Locations</a>
+      <a>About</a>
     </div>
   </header>
-  <div class="front-div">
-    <div>
-      <img src="img/main.avif" width="700px">
+
+  <div class="body-div">
+    <div class="front-div" style="justify-content: center">
+        <img src="img/main.avif" style="width: 100%;">
     </div>
-    <div>
-      <h1> Explore</h1>
-      <p> BLABALBALA</p>
+    <h2 style="text-align: center">Kick off the summer with fun in the sun</h2>
+    <p style="text-align: center; margin-bottom: 20px">Summer’s too short for ordinary plans. Make it epic with an extraordinary stay.</p>
+    <div class="front-div" style="justify-content: center">
+      <a > Book Your Stay</a>
     </div>
   </div>
-  <div class="front-div">
-    <img src="img/main.avif" width="800px">
+
+  <div class="body-div">
+    <div class="front-div">
+      <img src="img/main2.avif" width="800px">
+    </div>
   </div>
+
+  <div class="body-div">
+    <div class="img-container">
+      <img src="img/main3.avif" style="width: 100%">
+      <div class="bottom-centered">Bottom</div>
+    </div>
+  </div>
+
   <footer>
   </footer>
 </body>

@@ -4,32 +4,70 @@
   font-family: "Georgia", serif;
   line-height: 1.7em;
 }
+
 body {
+
+}
+
+header {
   margin-left: 250px;
   margin-right: 250px;
 }
-header {
 
-}
 footer{
   background-color: #f1f1f1;
   height: 200px;
 }
+
 a {
   text-decoration: none;
   color: black;
-  padding: 20px 10px 20px 10px;
+  padding: 16px 10px 16px 10px;
   float: right;
+  border-bottom: 8px solid #ffffff;
 }
+
 a:hover {
-  background-color: aqua;
+  background-color: #e7f2f6;
+  border-bottom:8px solid #104C97;
 }
+
 .header-nav {
   display: flex;
   justify-content: space-between;
 }
 
+.body-div {
+  margin-top: 20px;
+  margin-left: 250px;
+  margin-right: 250px;
+  margin-bottom: 20px;
+}
+
 .front-div {
+  margin-bottom: 20px;
   display: flex;
   justify-content: space-between;
 }
+
+.img-container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+
+.bottom-centered {
+  position: absolute;
+  bottom: 8px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
