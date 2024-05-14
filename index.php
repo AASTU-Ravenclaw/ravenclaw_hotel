@@ -38,7 +38,7 @@
     <h2 style="text-align: center">Kick off the summer with fun in the sun</h2>
     <p style="text-align: center; margin-bottom: 20px">Summer’s too short for ordinary plans. Make it epic with an extraordinary stay.</p>
     <div class="front-div" style="justify-content: center">
-      <a > Book Your Stay</a>
+      <a href="booking.php"> Book Your Stay</a>
     </div>
   </div>
 
@@ -51,7 +51,7 @@
   <div class="body-div">
     <div class="img-container">
       <img src="img/main3.avif" style="width: 100%">
-      <div class="bottom-centered">Bottom</div>
+      <div class="text-container">Bottom</div>
     </div>
   </div>
 

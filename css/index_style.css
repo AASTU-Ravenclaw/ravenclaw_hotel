@@ -5,13 +5,13 @@
   line-height: 1.7em;
 }
 
-body {
-
-}
-
 header {
   margin-left: 250px;
   margin-right: 250px;
+}
+
+body {
+
 }
 
 footer{
@@ -55,19 +55,24 @@ a:hover {
   text-align: center;
   color: white;
 }
-
-
-.bottom-centered {
-  position: absolute;
-  bottom: 8px;
-  left: 50%;
-  transform: translate(-50%, -50%);
+.img-container:hover {
+  animation: hoverEffect 1s;
 }
 
-.centered {
+.text-container {
   position: absolute;
-  top: 50%;
+  top: 90%;
   left: 50%;
-  transform: translate(-50%, -50%);
+}
+.text-container:hover {
+}
+
+@keyframes hoverEffect {
+  from {
+    top: 95%;
+  }
+  to {
+    top: 50%;
+  }
 }
 

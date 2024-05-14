@@ -13,6 +13,7 @@
 
   <body>
     <script src="js/tabbing.js"></script>
+
     <header>
       <div class="header-nav">
         <div>
@@ -24,24 +25,57 @@
       </div>
     </header>
 
+    <div>
+      <h2>Welcome, </h2>
+    </div>
     <div class="tab">
-      <button class="tablinks" onclick="openCity(event, 'London')">London</button>
-      <button class="tablinks" onclick="openCity(event, 'Paris')">Paris</button>
-      <button class="tablinks" onclick="openCity(event, 'Tokyo')">Tokyo</button>
-    </div>
-    <div id="London" class="tabcontent">
-      <h3>London</h3>
-      <p>London is the capital city of England.</p>
+      <button class="tablinks" onclick="openSetting(event, 'Book')">Book Reservation</button>
+      <button class="tablinks" onclick="openSetting(event, 'Edit')">Edit Reservation</button>
+      <button class="tablinks" onclick="openSetting(event, 'View')">View Reservation</button>
+      <button class="tablinks" onclick="openSetting(event, 'Room')">View Rooms</button>
     </div>
 
-    <div id="Paris" class="tabcontent">
-      <h3>Paris</h3>
-      <p>Paris is the capital of France.</p>
+    <div id="Book" class="tabcontent">
+      <h2>Book Reservation</h2>
+      <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+        <label for="room_type">Room Type</label><br>
+        <select id="room_type" name="room_type" required>
+          <option value="family">Family</option>
+          <option value="executive">Executive</option>
+          <option value="deluxe">Deluxe</option>
+          <option value="standard">Standard</option>
+        </select><br>
+        <label for="fname">First Name</label><br>
+        <input type="text" id="fname" name="fname"><br>
+        <label for="lname">Last Name</label><br>
+        <input type="text" id="lname" name="lname"><br>
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="phone">Phone Number</label><br>
+        <input type="text" id="phone" name="phone"><br>
+        <label for="check-in">Check-in</label> <br>
+        <input type="date" id="check-in" name="check-in"><br>
+        <label for="check-out">Check-out</label> <br>
+        <input type="date" id="check-out" name="check-out"><br><br>
+        <input type="button" id="submit" value="Book Reservation">
+      </form>
     </div>
 
-    <div id="Tokyo" class="tabcontent">
-      <h3>Tokyo</h3>
-      <p>Tokyo is the capital of Japan.</p>
+    <div id="Edit" class="tabcontent">
+      <h2>Edit Reservation</h2>
+      <form>
+
+      </form>
+    </div>
+
+    <div id="View" class="tabcontent">
+      <h2>View Reservation</h2>
+      <form>
+
+      </form>
+    </div>
+    <div id="Room" class="tabcontent">
+      <h2>View Rooms</h2>
     </div>
 
     <footer>
@@ -49,3 +83,47 @@
     </footer>
   </body>
 </html>
+
+<?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "hotel_system";
+// define variables and set to empty values
+$first_name = $last_name = $email = $phone = $type = $check_in = $check_out = "";
+if (isset($_POST['book_btn'])) {
+    $first_name = test_input($_POST["fname"]);
+    $last_name = test_input($_POST["lname"]);
+    $email = test_input($_POST["email"]);
+    $phone = test_input($_POST["phone"]);
+    $type = test_input($_POST["room_type"]);
+    $check_in = test_input($_POST["check-in"]);
+    $check_out = test_input($_POST["check-out"]);
+
+
+    $conn = new mysqli($servername, $username, $password, $dbname);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "INSERT INTO  reservation(first_name, last_name, email, phone, room_type, check_in, check_out)
+VALUES ('','','','','','','')";
+
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
+    }
+
+    $conn->close();
+}
+
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+
+
+?>

@@ -13,6 +13,45 @@
 <body>
     <script src="js/app.js"></script>
 
+    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+      <label for="username">User Name</label><br>
+      <input type="text" id="username" name="username"><br>
+      <label for="password">Password</label><br>
+      <input type="password" id="password" name="password"><br><br>
+      <input type="submit" value="submit">
+    </form>
 </body>
 
 <?php
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "hotel_system";
+$admin_username = $admin_password = "";
+
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $admin_username = test_input($_POST["username"]);
+    $admin_password = test_input($_POST["password"]);
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    $sql = "SELECT username, password FROM admin";
+    $result = mysqli_query($conn, $sql);
+
+    while ($row = mysqli_fetch_assoc($result)) {
+      if ($row["username"] == $admin_username && $row["password"] == $admin_password) {
+        header("Location: manager.php");
+      }
+    }
+    mysqli_close($conn);
+}
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
+?>
