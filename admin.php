@@ -25,7 +25,7 @@ if(!isset($_SESSION['username'])) {
     <script src="js/tabbing.js"></script>
 
     <header>
-      <div class="header-nav">
+      <div>
         <div>
           <img src="img/main.avif" width="50px" alt="logo">
         </div>
