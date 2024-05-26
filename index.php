@@ -1,3 +1,12 @@
+<?php
+session_start();
+include 'db_connection.php';
+
+if (isset($_SESSION['username'])) {
+    header("Location: admin.php");
+}
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -17,46 +26,46 @@
   <header>
     <div class="header-nav">
       <div>
-        <img src="/img/raven.png" alt="logo">
+        <img src="/img/main.avif" alt="logo">
       </div>
+
       <div>
         <a href="login.php">Sign In</a>
-        <a href="reservation.php">Find Stay</a>
+        <a href="find_stay.php">Find Stay</a>
       </div>
     </div>
-    <div class="header-nav" style="justify-content: flex-start">
-      <a style="padding: ">Services</a>
-      <a>Locations</a>
-      <a>About</a>
+
+    <div class="header-nav">
+      <a href="services.php">Services</a>
+      <a href="about.php">About</a>
     </div>
   </header>
 
-  <div class="body-div">
-    <div class="front-div" style="justify-content: center">
-        <img src="img/main.avif" style="width: 100%;">
+  <main>
+    <div>
+        <img src="img/main.avif">
+        <h1>Kick off the summer with fun in the sun</h1>
+        <p>Summer’s too short for ordinary plans. Make it epic with an extraordinary stay.</p>
     </div>
-    <h2 style="text-align: center">Kick off the summer with fun in the sun</h2>
-    <p style="text-align: center; margin-bottom: 20px">Summer’s too short for ordinary plans. Make it epic with an extraordinary stay.</p>
-    <div class="front-div" style="justify-content: center">
-      <a href="booking.php"> Book Your Stay</a>
-    </div>
-  </div>
+    <div>
+      <h1>Recent Reviews</h1>
+      <?php
 
-  <div class="body-div">
-    <div class="front-div">
-      <img src="img/main2.avif" width="800px">
+      ?>
     </div>
-  </div>
+    <div>
+      <form>
+        <input type="text">
+      </form>
+    </div>
 
-  <div class="body-div">
-    <div class="img-container">
-      <img src="img/main3.avif" style="width: 100%">
-      <div class="text-container">Bottom</div>
-    </div>
-  </div>
+  </main>
 
   <footer>
   </footer>
 </body>
 
 </html>
+
+
+

@@ -1,10 +1,19 @@
+<?php
+session_start();
+
+if(!isset($_SESSION['username'])) {
+    header("Location: login.php");
+}
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hotels by RavenClaw</title>
-    <link rel="stylesheet" href="css/manager_style.css">
+    <link rel="stylesheet" href="css/admin_style.css">
+    <link rel="stylesheet" href="css/header_footer_style.css">
 
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" href="icon.svg" type="image/svg+xml">
@@ -12,15 +21,16 @@
 </head>
 
   <body>
+    <script src="js/app.js"></script>
     <script src="js/tabbing.js"></script>
 
     <header>
       <div class="header-nav">
         <div>
-          <img src="/img/raven.png" alt="logo">
+          <img src="img/main.avif" width="50px" alt="logo">
         </div>
         <div>
-          <a href="index.php">Sign Out</a>
+          <a href="index.php" onclick="logout()" >Sign Out</a>
         </div>
       </div>
     </header>
@@ -33,6 +43,7 @@
       <button class="tablinks" onclick="openSetting(event, 'Edit')">Edit Reservation</button>
       <button class="tablinks" onclick="openSetting(event, 'View')">View Reservation</button>
       <button class="tablinks" onclick="openSetting(event, 'Room')">View Rooms</button>
+      <button class="tablinks" onclick="openSetting(event, 'Admin')">Add Admin</button>
     </div>
 
     <div id="Book" class="tabcontent">
@@ -77,6 +88,9 @@
     <div id="Room" class="tabcontent">
       <h2>View Rooms</h2>
     </div>
+    <div id="Admin" class="tabcontent">
+      <h2>Add Admin</h2>
+    </div>
 
     <footer>
 
@@ -85,12 +99,11 @@
 </html>
 
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "hotel_system";
+
+include 'db_connection.php';
 // define variables and set to empty values
 $first_name = $last_name = $email = $phone = $type = $check_in = $check_out = "";
+
 if (isset($_POST['book_btn'])) {
     $first_name = test_input($_POST["fname"]);
     $last_name = test_input($_POST["lname"]);
@@ -100,22 +113,16 @@ if (isset($_POST['book_btn'])) {
     $check_in = test_input($_POST["check-in"]);
     $check_out = test_input($_POST["check-out"]);
 
-
-    $conn = new mysqli($servername, $username, $password, $dbname);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-    }
-
     $sql = "INSERT INTO  reservation(first_name, last_name, email, phone, room_type, check_in, check_out)
 VALUES ('','','','','','','')";
 
-    if ($conn->query($sql) === TRUE) {
+    if ($GLOBALS['conn']->query($sql) === TRUE) {
         echo "New record created successfully";
     } else {
-        echo "Error: " . $sql . "<br>" . $conn->error;
+        echo "Error: " . $sql . "<br>" . $GLOBALS['conn']->error;
     }
 
-    $conn->close();
+    $GLOBALS['conn']->close();
 }
 
 function test_input($data) {

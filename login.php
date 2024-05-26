@@ -1,3 +1,8 @@
+<?php
+session_start();
+include 'db_connection.php';
+?>
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -10,6 +15,7 @@
     <link rel="icon" href="icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icon.png">
 </head>
+
 <body>
     <script src="js/app.js"></script>
 
@@ -23,6 +29,7 @@
 </body>
 
 <?php
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -38,12 +45,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Connection failed: " . mysqli_connect_error());
     }
 
-    $sql = "SELECT username, password FROM admin";
+    $sql = "SELECT username, password, first_name, last_name FROM admin";
     $result = mysqli_query($conn, $sql);
 
     while ($row = mysqli_fetch_assoc($result)) {
       if ($row["username"] == $admin_username && $row["password"] == $admin_password) {
-        header("Location: manager.php");
+          $_SESSION['username'] = $row['username'];
+          $_SESSION['password'] = $row['password'];
+          $_SESSION['first_name'] = $row['first_name'];
+          $_SESSION['last_name'] = $row['last_name'];
+          header("Location: admin.php");
       }
     }
     mysqli_close($conn);
@@ -51,7 +62,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 function test_input($data) {
     $data = trim($data);
     $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
+    return htmlspecialchars($data);
 }
+
 ?>

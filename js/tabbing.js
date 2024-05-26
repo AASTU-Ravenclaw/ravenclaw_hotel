@@ -1,5 +1,3 @@
-document.getElementById("defaultOpen").click();
-
 function openSetting(evt, settingName) {
     // Declare all variables
     var i, tabcontent, tablinks;
@@ -16,11 +14,4 @@ function openSetting(evt, settingName) {
 
     document.getElementById(settingName).style.display = "block";
     evt.currentTarget.className += " active";
-}
-
-function send()
-{
-    var events = document.getElementById("event").value;
-    location.href = "calm.php?day=" + xx + "&month=" + yy + "&year=" +
-        zz + "&events=" + events;
 }

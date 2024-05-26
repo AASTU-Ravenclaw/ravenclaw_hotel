@@ -21,7 +21,7 @@
     </div>
     <div>
       <a href="login.php">Sign In</a>
-      <a href="reservation.php">Find Stay</a>
+      <a href="find_stay.php">Find Stay</a>
     </div>
   </div>
   <div class="header-nav" style="justify-content: flex-start">
