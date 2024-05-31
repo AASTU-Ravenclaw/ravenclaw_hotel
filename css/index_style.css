@@ -4,3 +4,24 @@
   font-family: "Georgia", serif;
   line-height: 1.7em;
 }
+hr {
+  border: none;
+  height: 1px;
+  color: #333;
+  background-color: #333;
+}
+main, header, footer {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 250px;
+  padding-right: 250px;
+}
+#extend {
+  background: none!important;
+  border: none;
+  padding: 0!important;
+  font-family: arial, sans-serif;
+  color: #069;
+  text-decoration: underline;
+  cursor: pointer;
+}

@@ -5,7 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b86e44f5-78bd-472e-846b-9a65fcefc4e8" name="Changes" comment="refresh page css&#10;add a logout function&#10;separate the db connectino&#10;remake db to include a confirmation code">
+      <change afterPath="$PROJECT_DIR$/comments.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/css/reservation_style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/export.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/paypal.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/reservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/ravenclaw_hotel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ravenclaw_hotel.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/css/index_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index_style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/db_connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/find_stay.php" beforeDir="false" afterPath="$PROJECT_DIR$/find_stay.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,7 +65,7 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/ravenclaw_hotel/img&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/Ravenclaw_hotel&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -65,6 +78,7 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Ravenclaw_hotel" />
       <recent name="C:\xampp\htdocs\ravenclaw_hotel\img" />
     </key>
   </component>
@@ -98,7 +112,15 @@
       <workItem from="1716652363688" duration="2225000" />
       <workItem from="1716687877140" duration="744000" />
       <workItem from="1716690568731" duration="8609000" />
-      <workItem from="1716758221678" duration="355000" />
+      <workItem from="1716758221678" duration="391000" />
+      <workItem from="1716901903887" duration="147000" />
+      <workItem from="1716985638674" duration="6095000" />
+      <workItem from="1717041166392" duration="1025000" />
+      <workItem from="1717045716138" duration="3934000" />
+      <workItem from="1717076363568" duration="3527000" />
+      <workItem from="1717114536161" duration="921000" />
+      <workItem from="1717162131939" duration="1580000" />
+      <workItem from="1717165945591" duration="3559000" />
     </task>
     <task id="LOCAL-00001" summary="adding divs">
       <option name="closed" value="true" />
@@ -140,7 +162,15 @@
       <option name="project" value="LOCAL" />
       <updated>1716758383245</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="refresh page css&#10;add a logout function&#10;separate the db connectino&#10;remake db to include a confirmation code">
+      <option name="closed" value="true" />
+      <created>1716758590960</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716758590960</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -18,25 +18,26 @@ if(!isset($_SESSION['username'])) {
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" href="icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icon.png">
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 </head>
 
   <body>
     <script src="js/app.js"></script>
     <script src="js/tabbing.js"></script>
-
     <header>
       <div>
         <div>
           <img src="img/main.avif" width="50px" alt="logo">
         </div>
         <div>
-          <a href="index.php" onclick="logout()" >Sign Out</a>
+          <button id="logout">Sign Out</button>
         </div>
       </div>
     </header>
 
     <div>
-      <h2>Welcome, </h2>
+      <h2>Welcome, <?php echo $_SESSION['username'] ?></h2>
     </div>
     <div class="tab">
       <button class="tablinks" onclick="openSetting(event, 'Book')">Book Reservation</button>
@@ -90,6 +91,10 @@ if(!isset($_SESSION['username'])) {
     </div>
     <div id="Admin" class="tabcontent">
       <h2>Add Admin</h2>
+    </div>
+    <div id="Stats" class="tabcontent">
+      <h2>View Statistics</h2>
+      <button id="export_btn">Export</button>
     </div>
 
     <footer>
