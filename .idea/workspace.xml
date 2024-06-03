@@ -4,21 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b86e44f5-78bd-472e-846b-9a65fcefc4e8" name="Changes" comment="refresh page css&#10;add a logout function&#10;separate the db connectino&#10;remake db to include a confirmation code">
-      <change afterPath="$PROJECT_DIR$/comments.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/css/reservation_style.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/export.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/paypal.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/reservation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/ravenclaw_hotel.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/ravenclaw_hotel.iml" afterDir="false" />
+    <list default="true" id="b86e44f5-78bd-472e-846b-9a65fcefc4e8" name="Changes" comment="add payement method&#10;more review button&#10;print button on stay reservation">
+      <change afterPath="$PROJECT_DIR$/js/admin_app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/about.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/css/index_style.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/index_style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db_connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/db_connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/export.php" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/find_stay.php" beforeDir="false" afterPath="$PROJECT_DIR$/find_stay.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/paypal.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +28,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
         <option value="CSS File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -65,14 +62,14 @@
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/Ravenclaw_hotel&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/xampp/htdocs/Ravenclaw_hotel/index.php&quot;,
     &quot;list.type.of.created.stylesheet&quot;: &quot;CSS&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode.PHP&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;SQL Dialects&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -80,6 +77,10 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\xampp\htdocs\Ravenclaw_hotel" />
       <recent name="C:\xampp\htdocs\ravenclaw_hotel\img" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\xampp\htdocs\Ravenclaw_hotel" />
+      <recent name="C:\xampp\htdocs\Ravenclaw_hotel\js" />
     </key>
   </component>
   <component name="SharedIndexes">
@@ -120,7 +121,9 @@
       <workItem from="1717076363568" duration="3527000" />
       <workItem from="1717114536161" duration="921000" />
       <workItem from="1717162131939" duration="1580000" />
-      <workItem from="1717165945591" duration="3559000" />
+      <workItem from="1717165945591" duration="3949000" />
+      <workItem from="1717426318692" duration="5929000" />
+      <workItem from="1717436285836" duration="1578000" />
     </task>
     <task id="LOCAL-00001" summary="adding divs">
       <option name="closed" value="true" />
@@ -170,7 +173,23 @@
       <option name="project" value="LOCAL" />
       <updated>1716758590960</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add payement method&#10;more review button&#10;print button on stay reservation">
+      <option name="closed" value="true" />
+      <created>1717170504778</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1717170504778</updated>
+    </task>
+    <task id="LOCAL-00008" summary="add payement method&#10;more review button&#10;print button on stay reservation">
+      <option name="closed" value="true" />
+      <created>1717170512495</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1717170512495</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -192,6 +211,11 @@
     <MESSAGE value="adding manager page&#10;adding about page&#10;adding booking page&#10;adding reservation checking page" />
     <MESSAGE value="editing manager page" />
     <MESSAGE value="refresh page css&#10;add a logout function&#10;separate the db connectino&#10;remake db to include a confirmation code" />
-    <option name="LAST_COMMIT_MESSAGE" value="refresh page css&#10;add a logout function&#10;separate the db connectino&#10;remake db to include a confirmation code" />
+    <MESSAGE value="add payement method&#10;more review button&#10;print button on stay reservation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add payement method&#10;more review button&#10;print button on stay reservation" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

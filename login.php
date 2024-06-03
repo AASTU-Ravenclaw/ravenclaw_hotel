@@ -1,6 +1,6 @@
 <?php
-session_start();
 include 'db_connection.php';
+
 ?>
 
 <!doctype html>
@@ -49,10 +49,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     while ($row = mysqli_fetch_assoc($result)) {
       if ($row["username"] == $admin_username && $row["password"] == $admin_password) {
-          $_SESSION['username'] = $row['username'];
-          $_SESSION['password'] = $row['password'];
-          $_SESSION['first_name'] = $row['first_name'];
-          $_SESSION['last_name'] = $row['last_name'];
+          setcookie("username", $row['username'], time() + (86400 * 30), "/");
+          setcookie("password", $row['password'], time() + (86400 * 30), "/");
+          setcookie("firstname", $row['first_name'], time() + (86400 * 30), "/");
+          setcookie("lastname", $row['last_name'], time() + (86400 * 30), "/");
           header("Location: admin.php");
       }
     }

@@ -1,7 +1,7 @@
 <?php
 session_start();
 
-if(!isset($_SESSION['username'])) {
+if (!isset($_COOKIE["username"]) && !isset($_COOKIE["password"])) {
     header("Location: login.php");
 }
 ?>
@@ -23,12 +23,16 @@ if(!isset($_SESSION['username'])) {
 </head>
 
   <body>
-    <script src="js/app.js"></script>
+    <script src="js/admin_app.js"></script>
     <script src="js/tabbing.js"></script>
     <header>
       <div>
         <div>
-          <img src="img/main.avif" width="50px" alt="logo">
+          <a href="index.php">
+            <img src=
+                 "https://media.geeksforgeeks.org/wp-content/uploads/geeksforgeeks-13.png"
+                 alt="Click to visit geeksforgeeks.org">
+          </a>
         </div>
         <div>
           <button id="logout">Sign Out</button>
@@ -37,7 +41,7 @@ if(!isset($_SESSION['username'])) {
     </header>
 
     <div>
-      <h2>Welcome, <?php echo $_SESSION['username'] ?></h2>
+      <h2>Welcome, <?php echo $_COOKIE['username'] ?></h2>
     </div>
     <div class="tab">
       <button class="tablinks" onclick="openSetting(event, 'Book')">Book Reservation</button>
@@ -118,8 +122,7 @@ if (isset($_POST['book_btn'])) {
     $check_in = test_input($_POST["check-in"]);
     $check_out = test_input($_POST["check-out"]);
 
-    $sql = "INSERT INTO  reservation(first_name, last_name, email, phone, room_type, check_in, check_out)
-VALUES ('','','','','','','')";
+    $sql = "INSERT INTO  reservation(first_name, last_name, email, phone, room_type, check_in, check_out) VALUES ('','','','','','','')";
 
     if ($GLOBALS['conn']->query($sql) === TRUE) {
         echo "New record created successfully";

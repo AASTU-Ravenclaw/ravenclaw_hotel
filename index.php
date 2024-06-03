@@ -1,8 +1,7 @@
 <?php
-session_start();
 include 'db_connection.php';
 
-if (isset($_SESSION['username'])) {
+if (isset($_COOKIE["username"]) && isset($_COOKIE["password"])) {
     header("Location: admin.php");
 }
 ?>
@@ -27,7 +26,11 @@ if (isset($_SESSION['username'])) {
     <header>
       <div class="header-nav">
         <div>
-          <img src="/img/main.avif" alt="logo">
+          <a href="index.php">
+            <img src=
+                 "https://media.geeksforgeeks.org/wp-content/uploads/geeksforgeeks-13.png"
+                 alt="Click to visit geeksforgeeks.org">
+          </a>
         </div>
 
         <div>
@@ -61,7 +64,7 @@ if (isset($_SESSION['username'])) {
           <input type="text" name="title" id="title"><br>
           <label for="description">Description:</label><br>
           <textarea id="description" name="description" cols="60" rows="4"></textarea><br>
-          <input type="submit" value="Submit">
+          <input type="submit" id="submit_review_btn" value="Submit">
         </form>
         <br>
       </div>
@@ -69,7 +72,7 @@ if (isset($_SESSION['username'])) {
       <div>
         <div id="reviews">
             <?php
-            $sql = "SELECT * FROM review LIMIT 5";
+            $sql = "SELECT * FROM review LIMIT 2";
             $result = mysqli_query($GLOBALS['conn'], $sql);
             if (mysqli_num_rows($result) > 0) {
                 while ($row = mysqli_fetch_assoc($result)) {
