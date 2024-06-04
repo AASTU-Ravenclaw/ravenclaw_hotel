@@ -16,5 +16,21 @@ $(document).ready(function() {
         window.print();
         document.body.innerHTML = oldstr;
     })
+
+    $("#payment").click(function () {
+        $.ajax({
+            type: "POST",
+            url: "payment.php",
+            data: {get_param: 'value'},
+            dataType: 'json',
+           success: function(response) {
+                console.log(response);
+                window.location = response.data.checkout_url;
+            },
+            error: function() {
+                alert('Error occured');
+            }
+        })
+    });
 });
 

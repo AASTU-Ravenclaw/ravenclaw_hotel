@@ -1,6 +1,3 @@
-<?php
-  include 'paypal.php';
-?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -39,12 +36,10 @@
         <input type="date" id="check-in" name="check-in"><br>
         <label for="check-out">Check-out</label> <br>
         <input type="date" id="check-out" name="check-out"><br><br>
-        <div class="paypal">
-          <button type="submit" name="paypal"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" border="0" alt="PayPal Logo"></button>
-          <span style="font-family: wingdings,serif; font-size: 200%;">&#252;</span>
-        </div>
+
         <input type="button" id="submit" value="Book Reservation">
     </form>
+    <button id="payment"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" border="0" alt="Chapa Logo"></button>
 </div>
 </body>
 </html>

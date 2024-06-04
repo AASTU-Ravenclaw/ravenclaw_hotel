@@ -5,17 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b86e44f5-78bd-472e-846b-9a65fcefc4e8" name="Changes" comment="add payement method&#10;more review button&#10;print button on stay reservation">
-      <change afterPath="$PROJECT_DIR$/js/admin_app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/about.php" beforeDir="false" afterPath="$PROJECT_DIR$/about.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/export.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/find_stay.php" beforeDir="false" afterPath="$PROJECT_DIR$/find_stay.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/logout.php" beforeDir="false" afterPath="$PROJECT_DIR$/logout.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/paypal.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/reservation.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,6 +116,7 @@
       <workItem from="1717165945591" duration="3949000" />
       <workItem from="1717426318692" duration="5929000" />
       <workItem from="1717436285836" duration="1578000" />
+      <workItem from="1717509792088" duration="4609000" />
     </task>
     <task id="LOCAL-00001" summary="adding divs">
       <option name="closed" value="true" />
