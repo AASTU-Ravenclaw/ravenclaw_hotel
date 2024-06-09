@@ -16,7 +16,7 @@
 <script src="js/app.js"></script>
 <div id="Book" class="tabcontent">
     <h2>Book Reservation</h2>
-    <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+    <form id="reservation_form" method="post" action="review.php">
         <label for="room_type">Room Type</label><br>
         <select id="room_type" name="room_type" required>
             <option value="family">Family</option>
@@ -24,10 +24,10 @@
             <option value="deluxe">Deluxe</option>
             <option value="standard">Standard</option>
         </select><br>
-        <label for="fname">First Name</label><br>
-        <input type="text" id="fname" name="fname"><br>
-        <label for="lname">Last Name</label><br>
-        <input type="text" id="lname" name="lname"><br>
+        <label for="first_name" >First Name</label><br>
+        <input type="text" id="first_name" name="first_name" value="<?php if(isset($_SESSION['first_name'])) echo $_SESSION['first_name'];?>"><br>
+        <label for="last_name">Last Name</label><br>
+        <input type="text" id="last_name" name="last_name"><br>
         <label for="email">Email</label><br>
         <input type="email" id="email" name="email"><br>
         <label for="phone">Phone Number</label><br>
@@ -36,10 +36,8 @@
         <input type="date" id="check-in" name="check-in"><br>
         <label for="check-out">Check-out</label> <br>
         <input type="date" id="check-out" name="check-out"><br><br>
-
-        <input type="button" id="submit" value="Book Reservation">
+      <button id="payment" type="submit">Proceed to Payment</button><br>
     </form>
-    <button id="payment"><img src="https://www.paypalobjects.com/webstatic/mktg/Logo/pp-logo-100px.png" border="0" alt="Chapa Logo"></button>
 </div>
 </body>
 </html>

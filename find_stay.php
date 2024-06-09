@@ -39,11 +39,11 @@
   <hr style="padding: 0">
   <main>
     <form>
-      <input type="text">
-      <input type="submit" id="find_stay_btn" value="Find Reservations">
+      <label for="confirmation_id">Enter Confirmation Code:</label><br>
+      <input type="text" name="confirmation_id" id="confirmation_id">
+      <input type="button" id="find_stay_btn" value="Find Reservations">
     </form>
-    <div id="result">
-
+    <div id="stay_result">
     </div>
     <button id="print">Print</button>
   </main>

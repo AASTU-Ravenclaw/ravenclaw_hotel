@@ -1,19 +1,32 @@
+
 <?php
 include 'db_connection.php';
+global $conn;
 
-$count = $_POST['count'];
-$sql = "SELECT * FROM review LIMIT $count";
-$result = mysqli_query($GLOBALS['conn'], $sql);
-if (mysqli_num_rows($result) > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-        echo "<p>" . $row['first_name'] . "</p>";
-        echo "<p>" . $row['last_name'] . "</p>";
-        echo "<p>" . $row['date'] . "</p>";
-        echo "<p>" . $row['rating'] . "/5</p>";
-        echo "<p>" . $row['title'] . "</p>";
-        echo "<p>" . $row['description'] . "</p>";
+$first_name = $last_name = $date = $rating = $title = $description = "";
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $first_name = test_input($_POST["first_name"]);
+    $last_name = test_input($_POST["last_name"]);
+    $date = date("Y-m-d");
+    $rating = test_input($_POST["rating"]);
+    $title = test_input($_POST["title"]);
+    $description = test_input($_POST["description"]);
+
+    $sql = "INSERT INTO review (first_name, last_name, date, rating, title, description) VALUES ('$first_name','$last_name','$date','$rating','$title','$description')";
+    if ($conn->query($sql) === TRUE) {
+        echo "New record created successfully";
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
     }
-} else {
-    echo "<p>No reviews</p>";
+    $conn->close();
+    header("Location: index.php");
+}
+
+function test_input($data) {
+    $data = trim($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
 }
 ?>

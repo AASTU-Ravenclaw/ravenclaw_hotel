@@ -1,6 +1,6 @@
 <?php
+global $conn;
 include 'db_connection.php';
-
 ?>
 
 <!doctype html>
@@ -16,8 +16,6 @@ include 'db_connection.php';
 </head>
 
 <body>
-    <script src="js/app.js"></script>
-
     <form method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
       <label for="username">User Name</label><br>
       <input type="text" id="username" name="username"><br>
@@ -29,25 +27,16 @@ include 'db_connection.php';
 
 <?php
 
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "hotel_system";
 $admin_username = $admin_password = "";
-
-$conn = mysqli_connect($servername, $username, $password, $dbname);
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $admin_username = test_input($_POST["username"]);
     $admin_password = test_input($_POST["password"]);
-    if (!$conn) {
-        die("Connection failed: " . mysqli_connect_error());
-    }
 
     $sql = "SELECT username, password, first_name, last_name FROM admin";
-    $result = mysqli_query($conn, $sql);
+    $result = $conn->query($sql);
 
-    while ($row = mysqli_fetch_assoc($result)) {
+    while ($row = $result-> fetch_assoc()) {
       if ($row["username"] == $admin_username && $row["password"] == $admin_password) {
           setcookie("username", $row['username'], time() + (86400 * 30), "/");
           setcookie("password", $row['password'], time() + (86400 * 30), "/");
@@ -57,7 +46,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       }
     }
     echo 'incorrect pass';
-    mysqli_close($conn);
+    $conn->close();
 }
 function test_input($data) {
     $data = trim($data);

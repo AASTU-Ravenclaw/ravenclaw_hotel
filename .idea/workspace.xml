@@ -4,10 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b86e44f5-78bd-472e-846b-9a65fcefc4e8" name="Changes" comment="add payement method&#10;more review button&#10;print button on stay reservation">
+    <list default="true" id="b86e44f5-78bd-472e-846b-9a65fcefc4e8" name="Changes" comment="add chappa implementation">
+      <change afterPath="$PROJECT_DIR$/admin/add_admin.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/confirmation.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/extend.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/stay_display.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin.php" beforeDir="false" afterPath="$PROJECT_DIR$/admin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/book.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/db_connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/db_connection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/find_stay.php" beforeDir="false" afterPath="$PROJECT_DIR$/find_stay.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/js/admin_app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/admin_app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/payment.php" beforeDir="false" afterPath="$PROJECT_DIR$/payment.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reservation.php" beforeDir="false" afterPath="$PROJECT_DIR$/reservation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/review.php" beforeDir="false" afterPath="$PROJECT_DIR$/review.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,7 +129,10 @@
       <workItem from="1717165945591" duration="3949000" />
       <workItem from="1717426318692" duration="5929000" />
       <workItem from="1717436285836" duration="1578000" />
-      <workItem from="1717509792088" duration="4609000" />
+      <workItem from="1717509792088" duration="4635000" />
+      <workItem from="1717590433517" duration="7029000" />
+      <workItem from="1717788632871" duration="6859000" />
+      <workItem from="1717916430959" duration="1718000" />
     </task>
     <task id="LOCAL-00001" summary="adding divs">
       <option name="closed" value="true" />
@@ -182,7 +198,15 @@
       <option name="project" value="LOCAL" />
       <updated>1717170512495</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add chappa implementation">
+      <option name="closed" value="true" />
+      <created>1717514444234</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1717514444234</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -205,7 +229,8 @@
     <MESSAGE value="editing manager page" />
     <MESSAGE value="refresh page css&#10;add a logout function&#10;separate the db connectino&#10;remake db to include a confirmation code" />
     <MESSAGE value="add payement method&#10;more review button&#10;print button on stay reservation" />
-    <option name="LAST_COMMIT_MESSAGE" value="add payement method&#10;more review button&#10;print button on stay reservation" />
+    <MESSAGE value="add chappa implementation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add chappa implementation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

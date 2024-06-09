@@ -1,4 +1,5 @@
 <?php
+global $conn;
 include 'db_connection.php';
 
 if (isset($_COOKIE["username"]) && isset($_COOKIE["password"])) {
@@ -44,7 +45,7 @@ if (isset($_COOKIE["username"]) && isset($_COOKIE["password"])) {
         <a href="about.php">About</a>
       </div>
     </header>
-    <hr style="padding: 0">
+    <hr>
     <main>
       <div>
         <img src="img/main.avif" width="50px">
@@ -55,16 +56,18 @@ if (isset($_COOKIE["username"]) && isset($_COOKIE["password"])) {
 
       <div>
         <h1>Reviews</h1>
-        <form>
+        <form method="post" action="review.php">
           <label for="first_name">First Name:</label>
           <input type="text" name="first_name" id="first_name">
           <label for="last_name">Last Name:</label>
           <input type="text" name="last_name" id="last_name"><br>
+          <label for="rating">Rating:</label>
+          <input type="number" name="rating" id="rating"><br>
           <label for="title">Title:</label>
           <input type="text" name="title" id="title"><br>
           <label for="description">Description:</label><br>
           <textarea id="description" name="description" cols="60" rows="4"></textarea><br>
-          <input type="submit" id="submit_review_btn" value="Submit">
+          <input type="submit" id="submit_review" value="Submit">
         </form>
         <br>
       </div>
@@ -73,9 +76,9 @@ if (isset($_COOKIE["username"]) && isset($_COOKIE["password"])) {
         <div id="reviews">
             <?php
             $sql = "SELECT * FROM review LIMIT 2";
-            $result = mysqli_query($GLOBALS['conn'], $sql);
-            if (mysqli_num_rows($result) > 0) {
-                while ($row = mysqli_fetch_assoc($result)) {
+            $result = $conn -> query($sql);
+            if ($result->num_rows > 0) {
+                while($row = $result->fetch_assoc()) {
                     echo "<p>" . $row['first_name'] . "</p>";
                     echo "<p>" . $row['last_name'] . "</p>";
                     echo "<p>" . $row['date'] . "</p>";
@@ -96,8 +99,4 @@ if (isset($_COOKIE["username"]) && isset($_COOKIE["password"])) {
     </footer>
   </div>
 </body>
-
 </html>
-
-
-

@@ -1,4 +1,6 @@
 <?php
+include 'db_connection.php';
+global $conn;
 session_start();
 
 if (!isset($_COOKIE["username"]) && !isset($_COOKIE["password"])) {
@@ -49,6 +51,7 @@ if (!isset($_COOKIE["username"]) && !isset($_COOKIE["password"])) {
       <button class="tablinks" onclick="openSetting(event, 'View')">View Reservation</button>
       <button class="tablinks" onclick="openSetting(event, 'Room')">View Rooms</button>
       <button class="tablinks" onclick="openSetting(event, 'Admin')">Add Admin</button>
+      <button class="tablinks" onclick="openSetting(event, 'Stats')">View Statistics</button>
     </div>
 
     <div id="Book" class="tabcontent">
@@ -86,18 +89,69 @@ if (!isset($_COOKIE["username"]) && !isset($_COOKIE["password"])) {
 
     <div id="View" class="tabcontent">
       <h2>View Reservation</h2>
-      <form>
+      <table border="1" cellspacing="0" cellpadding="10">
+        <tr>
+          <th>S.N</th>
+          <th>Confirmation ID</th>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Email</th>
+          <th>Phone</th>
+          <th>Room ID</th>
+          <th>Check In </th>
+          <th>Check Out</th>
+        </tr>
+          <?php
+          $query = "SELECT confirmation_id, first_name, last_name, email, phone, room_id, check_in, check_out FROM reservation";
+          $result = $conn->query($query);
+          if ($result->num_rows > 0) {
+              $sn=1;
+              while($data = $result->fetch_assoc()) {
+                  ?>
+                <tr>
+                  <td><?php echo $sn; ?> </td>
+                  <td><?php echo $data['confirmation_id']; ?> </td>
+                  <td><?php echo $data['first_name']; ?> </td>
+                  <td><?php echo $data['last_name']; ?> </td>
+                  <td><?php echo $data['email']; ?> </td>
+                  <td><?php echo $data['phone']; ?> </td>
+                  <td><?php echo $data['room_id']; ?> </td>
+                  <td><?php echo $data['check_in']; ?> </td>
+                  <td><?php echo $data['check_out']; ?> </td>
 
-      </form>
+                <tr>
+                  <?php
+                  $sn++;}} else { ?>
+            <tr>
+              <td colspan="8">No data found</td>
+            </tr>
+          <?php } ?>
+      </table>
     </div>
     <div id="Room" class="tabcontent">
       <h2>View Rooms</h2>
     </div>
     <div id="Admin" class="tabcontent">
       <h2>Add Admin</h2>
+      <form method="post"">
+        <label for="first_name">First Name</label><br>
+        <input type="text" id="first_name" name="first_name"><br>
+        <label for="last_name">Last Name</label><br>
+        <input type="text" id="last_name" name="last_name"><br>
+        <label for="username">Username</label><br>
+        <input type="text" id="username" name="username"><br>
+        <label for="email">Email</label><br>
+        <input type="email" id="email" name="email"><br>
+        <label for="email">Password</label><br>
+        <input type="password" id="password" name="password"><br>
+        <input type="submit" id="add_admin_btn" value="Add Admin">
+      </form>
     </div>
     <div id="Stats" class="tabcontent">
       <h2>View Statistics</h2>
+      <div>
+        <p>Amount of subscribed</p>
+      </div>
       <button id="export_btn">Export</button>
     </div>
 
@@ -108,12 +162,10 @@ if (!isset($_COOKIE["username"]) && !isset($_COOKIE["password"])) {
 </html>
 
 <?php
-
-include 'db_connection.php';
 // define variables and set to empty values
 $first_name = $last_name = $email = $phone = $type = $check_in = $check_out = "";
 
-if (isset($_POST['book_btn'])) {
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $first_name = test_input($_POST["fname"]);
     $last_name = test_input($_POST["lname"]);
     $email = test_input($_POST["email"]);
@@ -124,7 +176,7 @@ if (isset($_POST['book_btn'])) {
 
     $sql = "INSERT INTO  reservation(first_name, last_name, email, phone, room_type, check_in, check_out) VALUES ('','','','','','','')";
 
-    if ($GLOBALS['conn']->query($sql) === TRUE) {
+    if ($conn->query($sql) === TRUE) {
         echo "New record created successfully";
     } else {
         echo "Error: " . $sql . "<br>" . $GLOBALS['conn']->error;
@@ -132,13 +184,4 @@ if (isset($_POST['book_btn'])) {
 
     $GLOBALS['conn']->close();
 }
-
-function test_input($data) {
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-
-
 ?>
