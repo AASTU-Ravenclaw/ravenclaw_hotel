@@ -75,7 +75,7 @@ if (isset($_COOKIE["username"]) && isset($_COOKIE["password"])) {
       <div>
         <div id="reviews">
             <?php
-            $sql = "SELECT * FROM review LIMIT 2";
+            $sql = "SELECT * FROM review LIMIT 5";
             $result = $conn -> query($sql);
             if ($result->num_rows > 0) {
                 while($row = $result->fetch_assoc()) {

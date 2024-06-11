@@ -13,7 +13,7 @@ curl_setopt_array($curl, array(
     CURLOPT_POSTFIELDS =>'{
     "amount":"100",
     "currency": "ETB",
-    "tx_ref": "chewatatest-6661",
+    "tx_ref": "chewatatest-101421",
     "callback_url": "https://webhook.site/077164d6-29cb-40df-ba29-8a00e59a7e60",
     "return_url": "http://localhost/ravenclaw_hotel/confirmation.php",
     "customization[title]": "Ravenclaw Hotel",

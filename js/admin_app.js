@@ -9,21 +9,28 @@ $(document).ready(function() {
         });
     });
 
-    $("#add_admin_btn").click(function () {
-        $.ajax({
-            type: "POST",
-            url: "admin/add_admin.php",
-        }).done(function () {
-            console.log("DONE");
-        });
+    $("#search_confirmation_btn").click(function () {
+        let confirmation_id = document.getElementById("confirmation_id").value;
+        $("#edit_result").load("edit_result.php", {confirmation_id: confirmation_id});
     });
 
-    $("#print").click(function () {
+    $("#print_reservation").click(function () {
         let headstr = "<html><head><title>Booking Details</title></head><body>";
         let footstr1 = "</";
         let footstr2 = "body>";
         let footstr=footstr1 + footstr2;
-        let newstr = document.getElementById("result").innerHTML;
+        let newstr = document.getElementById("printable_reservation").innerHTML;
+        let oldstr = document.body.innerHTML;
+        document.body.innerHTML = headstr+newstr+footstr;
+        window.print();
+        document.body.innerHTML = oldstr;
+    });
+    $("#print_room").click(function () {
+        let headstr = "<html><head><title>Booking Details</title></head><body>";
+        let footstr1 = "</";
+        let footstr2 = "body>";
+        let footstr=footstr1 + footstr2;
+        let newstr = document.getElementById("printable_room").innerHTML;
         let oldstr = document.body.innerHTML;
         document.body.innerHTML = headstr+newstr+footstr;
         window.print();

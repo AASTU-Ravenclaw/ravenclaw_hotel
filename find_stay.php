@@ -38,14 +38,12 @@
   </header>
   <hr style="padding: 0">
   <main>
-    <form>
       <label for="confirmation_id">Enter Confirmation Code:</label><br>
       <input type="text" name="confirmation_id" id="confirmation_id">
       <input type="button" id="find_stay_btn" value="Find Reservations">
-    </form>
-    <div id="stay_result">
+    <div id="printable_stay">
     </div>
-    <button id="print">Print</button>
+    <button id="print_stay">Print</button
   </main>
 </div>
 </body>

@@ -40,8 +40,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
       if ($row["username"] == $admin_username && $row["password"] == $admin_password) {
           setcookie("username", $row['username'], time() + (86400 * 30), "/");
           setcookie("password", $row['password'], time() + (86400 * 30), "/");
-          setcookie("firstname", $row['first_name'], time() + (86400 * 30), "/");
-          setcookie("lastname", $row['last_name'], time() + (86400 * 30), "/");
+          setcookie("first_name", $row['first_name'], time() + (86400 * 30), "/");
+          setcookie("last_name", $row['last_name'], time() + (86400 * 30), "/");
           header("Location: admin.php");
       }
     }

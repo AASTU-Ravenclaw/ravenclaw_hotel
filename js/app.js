@@ -1,21 +1,21 @@
 $(document).ready(function() {
-    let count = 2;
+    let count = 5;
     $("#extend").click(function () {
-        count += 2;
+        count += 5;
         $("#reviews").load("extend.php", {count: count});
     });
 
     $("#find_stay_btn").click(function () {
         confirmation_id = document.getElementById("confirmation_id").value;
-        $("#stay_result").load("stay_display.php", {confirmation_id: confirmation_id});
+        $("#printable_stay").load("stay_display.php", {confirmation_id: confirmation_id});
     });
 
-    $("#print").click(function () {
+    $("#print_stay").click(function () {
         let headstr = "<html><head><title>Booking Details</title></head><body>";
         let footstr1 = "</";
         let footstr2 = "body>";
         let footstr=footstr1 + footstr2;
-        let newstr = document.getElementById("stay_result").innerHTML;
+        let newstr = document.getElementById("printable_stay").innerHTML;
         let oldstr = document.body.innerHTML;
         document.body.innerHTML = headstr+newstr+footstr;
         window.print();

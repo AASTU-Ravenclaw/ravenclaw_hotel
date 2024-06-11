@@ -1,6 +1,6 @@
 <?php
 setcookie('username', '', -1, '/');
 setcookie('password', '', -1, '/');
-setcookie('firstname', '', -1, '/');
-setcookie('lastname', '', -1, '/');
+setcookie('first_name', '', -1, '/');
+setcookie('last_name', '', -1, '/');
 ?>
