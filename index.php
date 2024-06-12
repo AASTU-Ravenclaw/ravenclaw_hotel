@@ -62,7 +62,7 @@ if (isset($_COOKIE["username"]) && isset($_COOKIE["password"])) {
           <label for="last_name">Last Name:</label>
           <input type="text" name="last_name" id="last_name"><br>
           <label for="rating">Rating:</label>
-          <input type="number" name="rating" id="rating"><br>
+          <input type="number" name="rating" id="rating" min="1" max="5"><br>
           <label for="title">Title:</label>
           <input type="text" name="title" id="title"><br>
           <label for="description">Description:</label><br>
