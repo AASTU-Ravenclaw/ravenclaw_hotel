@@ -6,6 +6,8 @@
     <title>Hotels by RavenClaw</title>
     <link rel="stylesheet" href="css/index_style.css">
     <link rel="stylesheet" href="css/services.css">
+    <link rel="Stylesheet" href="css/header_footer_style.css">
+    
     <link rel="icon" href="favicon.ico" sizes="any">
     <link rel="icon" href="icon.svg" type="image/svg+xml">
     <link rel="apple-touch-icon" href="icon.png">
@@ -13,6 +15,26 @@
 
 <body>
 <script src="js/app.js"></script>
+<header>
+      <div class="logo">
+          <a href="index.php">
+            <img src= "icon.svg"
+                 width = "70"
+                 alt="Hotels by Ravenclaw Logo"
+                 href="index.php">
+          </a>
+      </div>
+
+      <div class="header-nav">
+      <ul>
+        <li><a href="login.php">Sign In</a></li>
+        <li><a href="find_stay.php">Find Stay</a></li>
+        <li><a href="services.php">Services</a></li>
+        <li><a href="about.php">About</a></li>
+      </ul>
+      </div>
+</header>
+<main>
     <h2>Services Provided at Hotels by RavenClaw</h2>
     <p>At Hotels by RavenClaw, we pride ourselves on offering a comprehensive range of services designed to make your stay 
         both comfortable and memorable. Our commitment to excellence ensures that every aspect of your visit is attended to 
@@ -47,5 +69,6 @@
     <p>Thank you for choosing Hotels by RavenClaw. Our wide range of services is designed to provide
          you with a seamless and enjoyable experience. We look forward to welcoming you and ensuring
          that your stay is nothing short of exceptional.</p>
+</main>
 </body>
 </html>
