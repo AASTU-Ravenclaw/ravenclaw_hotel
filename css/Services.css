@@ -1,0 +1,60 @@
+/* Global Styles */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  h2, h3 {
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+  }
+  
+  /* Header Styles */
+  
+  h2 {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  /* Section Styles */
+  
+  h3 {
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 30px;
+  }
+  
+  /* Service Styles */
+  
+  .service {
+    margin-bottom: 40px;
+  }
+  
+  .service h3 {
+    margin-top: 0;
+  }
+  
+  .service p {
+    margin-bottom: 10px;
+  }
+  
+  /* Footer Styles */
+  
+  footer {
+    background-color: #f7f7f7;
+    padding: 20px;
+    text-align: center;
+    margin-top: 40px;
+  }
+  
+  footer p {
+    margin-bottom: 0;
+  }
